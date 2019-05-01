@@ -1,1 +1,91 @@
-Hello World
+<!-- this script got from www.htmlbestcodes.com-Coded by: Krishna Eydat -->
+
+<html>
+<head>
+</head>
+<body>
+<div align="center" id="img" style="position:absolute;">
+<img src="http://www.htmlbestcodes.com/images/ball.gif" onMouseDown="pauseResume();">
+</div>
+<SCRIPT LANGUAGE="JavaScript">
+var step = 5;
+var delay = 30;
+var height = 0;
+var Hoffset = 0;
+var Woffset = 0;
+var yon = 0;
+var xon = 0;
+var pause = true;
+var interval;
+var name = navigator.appName;
+if(name == "Microsoft Internet Explorer") name = true;
+else name = false;
+var xPos = 20;
+if(name) var yPos = document.body.clientHeight;
+else var yPos = window.innerHeight;
+function changePos() {
+if(name) {
+width = document.body.clientWidth;
+height = document.body.clientHeight;
+Hoffset = img.offsetHeight;
+Woffset = img.offsetWidth;
+img.style.left = xPos + document.body.scrollLeft;
+img.style.top = yPos + document.body.scrollTop;
+}
+else {
+height = window.innerHeight;
+width = window.innerWidth;
+Hoffset =33;
+Woffset =30;
+document.getElementById('img').style.top = yPos + window.pageYOffset;
+document.getElementById('img').style.left = xPos + window.pageXOffset;
+}
+if (yon) {
+yPos = yPos + step;
+}
+else {
+yPos = yPos - step;
+}
+if (yPos < 0) {
+yon = 1;
+yPos = 0;
+}
+if (yPos >= (height - Hoffset)) {
+yon = 0;
+yPos = (height - Hoffset);
+}
+if (xon) {
+xPos = xPos + step;
+}
+else {
+xPos = xPos - step;
+}
+if (xPos < 0) {
+xon = 1;
+xPos = 0;
+}
+if (xPos >= (width - Woffset)) {
+xon = 0;
+xPos = (width - Woffset);
+   }
+}
+function start() {
+document.getElementById('img').style.visibility = "visible";
+interval = setInterval('changePos()',delay);
+}
+function pauseResume() {
+if(pause) {
+clearInterval(interval);
+pause = false;
+}
+else {
+interval = setInterval('changePos()',delay);
+pause = true;
+   }
+}
+start();
+//  End -->
+</script>
+<br/><div style="clear:both"></div><div><a target="_blank" href="http://www.htmlbestcodes.com/"><span style="font-size: 8pt; text-decoration: none">HTML Best Codes</span></a></div>
+</body>
+</html>
