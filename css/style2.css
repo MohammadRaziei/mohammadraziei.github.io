@@ -27,7 +27,7 @@ h6 {
 }
 
 h1 {
-    font-size: 5.2rem;
+    font-size: 6rem;
     line-height: 5.5rem;
 }
 
@@ -82,11 +82,7 @@ a:active {
       font-weight: 600;
       text-transform: uppercase;
   }
-  #sideNav .navbar-nav .nav-home .nav-link{
-      font-weight: bold;
-      font-weight: 600;
-      text-transform: uppercase;
-  }
+
   @media (min-width: 992px) {
       #sideNav {
           text-align: center;
@@ -215,7 +211,7 @@ a:active {
                       ABOUT
 ====================================================*/
   #about {
-      background-image: url(../img/book3.jpg); 
+      background-image: url(../img/profile-banner.jpg); 
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
