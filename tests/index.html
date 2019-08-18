@@ -1,91 +1,161 @@
-<!-- this script got from www.htmlbestcodes.com-Coded by: Krishna Eydat -->
-
+<!DOCTYPE HTML>
 <html>
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- <meta http-equiv="refresh" content="1" /> -->
+
+  <title>Example of jQuery Browse</title>
+  <script src="jquery-3.1.1.min.js"></script>
+  <script src="/jquery.filebrowser/js/jquery.filebrowser-src.js"></script>
+  <link href="/jquery.filebrowser/css/jquery.filebrowser-src.css" rel="stylesheet"/>
+  <script src="http://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+  <link href="http://code.jquery.com/ui/1.12.1/themes/dark-hive/jquery-ui.css" rel="stylesheet"/>
+  <style>
+body {
+    margin: 0;
+}
+.browser {
+    float: left;
+    border: 1px solid gray;
+    width: 99.9%;
+    height: 800px;
+    margin: -0.1%;
+    font-size: 120%;
+}
+.browser.selected {
+    border-color: blue;
+}
+  </style>
+  <script>
+   $(function() {
+        /*var env = {
+           'foo': {
+               'foo.txt': 'foo.txt content',
+               'bar.txt': 'bar.txt content'
+           },
+           'bar': {
+               'page.html': '<html></html>',
+               'style.css': 'body { overflow: scroll; }'
+           },
+           'baz.txt': 'baz.txt content',
+           'quux.txt': './quux.txt',
+           'lorem.svg': 'lorem.svg content',
+           'ipsum.doc': 'ipsum.doc content',
+           'dolor.txt': 'dolor.txt content',
+           'sit.jpg': 'sit.jpg content',
+           'amet.gif': 'amet.gif content'
+       };*/
+
+       var env = {
+       		'cansat' : 'cansat',
+       		'theme' : 'theme'
+       };
+       function get(path) {
+           var current = env;
+           browser.walk(path, function(file) {
+               current = current[file];
+           });
+           return current;
+       }
+       function process(src, dest, remove) {
+           console.log('process ' + src + ' => ' + dest);
+           var file = env;
+           var name;
+           browser.walk(src, function(part, last) {
+               var src = file[part];
+               if (last) {
+                   if (remove) {
+                       delete file[part];
+                   }
+               }
+               file = src;
+           });
+           var current = env;
+           browser.walk(dest, function(part, last) {
+               if (!last) {
+                   current = current[part];
+               } else {
+                   name = part;
+               }
+           });
+           current[name] = file;
+           var defer = $.Deferred();
+           // one second delay promise that simulate ajax upload
+           setTimeout(function() {
+               defer.resolve();
+           }, 1000);
+           return defer.promise();
+       }
+       function upload(file, path) {
+           var current = env;
+           browser.walk(path, function(part) {
+               if (!current[part]) {
+                   current[part] = {}; // upload new directory
+               }
+               current = current[part];
+           });
+           current[file.name] = 'new file ' + file.name;
+           console.log('upload ' + file.name + ' to ' + path + ' directory');
+           return $.when(true); // resolved promise
+       }
+       $('.browser').browse({
+           root: '/',
+           separator: '/',
+           name: 'filestystem',
+           rename: function(src, dest) {
+               return process(src, dest, true);
+           },
+           refresh_timer: 0,
+           copy: process,
+           contextmenu: true,
+           dir: function(path) {
+               dir = get(path);
+               var result;
+               if ($.isPlainObject(dir)) {
+                   result = {files:[], dirs: []};
+                   Object.keys(dir).forEach(function(key) {
+                       if (typeof dir[key] == 'string') {
+                           result.files.push(key);
+                       } else if ($.isPlainObject(dir[key])) {
+                           result.dirs.push(key);
+                       }
+                   });
+               }
+               return $.when(result); // resolved promise
+           },
+           exists: function(path) {
+               return typeof get(path) != 'undefined';
+           },
+           upload: function(file, path) {
+               return upload(file, path);
+           },
+           open: function(filename) {
+               var file = get(filename);
+               if (typeof file == 'string') {
+                   window.location.href = (file);
+               }
+           },
+           create: function(path, type) {
+               var m = path.match(/(.*)\/(.*)/);
+               var parent = get(m[1]);
+               if (type == 'directory') {
+                   parent[m[2]] = {};
+               } else {
+                   parent[m[2]] = 'Content of new File';
+               }
+           },
+           remove: function(path) {
+               var m = path.match(/(.*)\/(.*)/);
+               var parent = get(m[1]);
+               delete parent[m[2]];
+           }
+       });
+       var browser = $('.browser').eq(0).browse();
+   });
+  </script>
 </head>
+    <div class="browser"></div>
+<!--    <div class="browser"></div>-->
 <body>
-<div align="center" id="img" style="position:absolute;">
-<img src="http://www.htmlbestcodes.com/images/ball.gif" onMouseDown="pauseResume();">
-</div>
-<SCRIPT LANGUAGE="JavaScript">
-var step = 5;
-var delay = 30;
-var height = 0;
-var Hoffset = 0;
-var Woffset = 0;
-var yon = 0;
-var xon = 0;
-var pause = true;
-var interval;
-var name = navigator.appName;
-if(name == "Microsoft Internet Explorer") name = true;
-else name = false;
-var xPos = 20;
-if(name) var yPos = document.body.clientHeight;
-else var yPos = window.innerHeight;
-function changePos() {
-if(name) {
-width = document.body.clientWidth;
-height = document.body.clientHeight;
-Hoffset = img.offsetHeight;
-Woffset = img.offsetWidth;
-img.style.left = xPos + document.body.scrollLeft;
-img.style.top = yPos + document.body.scrollTop;
-}
-else {
-height = window.innerHeight;
-width = window.innerWidth;
-Hoffset =33;
-Woffset =30;
-document.getElementById('img').style.top = yPos + window.pageYOffset;
-document.getElementById('img').style.left = xPos + window.pageXOffset;
-}
-if (yon) {
-yPos = yPos + step;
-}
-else {
-yPos = yPos - step;
-}
-if (yPos < 0) {
-yon = 1;
-yPos = 0;
-}
-if (yPos >= (height - Hoffset)) {
-yon = 0;
-yPos = (height - Hoffset);
-}
-if (xon) {
-xPos = xPos + step;
-}
-else {
-xPos = xPos - step;
-}
-if (xPos < 0) {
-xon = 1;
-xPos = 0;
-}
-if (xPos >= (width - Woffset)) {
-xon = 0;
-xPos = (width - Woffset);
-   }
-}
-function start() {
-document.getElementById('img').style.visibility = "visible";
-interval = setInterval('changePos()',delay);
-}
-function pauseResume() {
-if(pause) {
-clearInterval(interval);
-pause = false;
-}
-else {
-interval = setInterval('changePos()',delay);
-pause = true;
-   }
-}
-start();
-//  End -->
-</script>
-<br/><div style="clear:both"></div><div><a target="_blank" href="http://www.htmlbestcodes.com/"><span style="font-size: 8pt; text-decoration: none">HTML Best Codes</span></a></div>
 </body>
 </html>
