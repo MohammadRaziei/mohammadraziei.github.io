@@ -20,7 +20,7 @@
 
 </div>
 
-### View a [live demo here.](https://reactresume.com)
+### View a [live demo here.](https://demo.reactresume.com) ([source](https://github.com/tbakerx/react-resume-template))
 
 #### If this template has helped you and you'd like to support my work, feel free to [♥️ Sponsor](https://github.com/sponsors/tbakerx) the project
 

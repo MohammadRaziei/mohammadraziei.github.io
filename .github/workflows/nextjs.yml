@@ -69,13 +69,19 @@ jobs:
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
+            runner.os−nextjs−{{ runner.os }}-nextjs-{{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Static HTML export with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next export
+      - name: Beautifier - tidy format output html
+        run: |
+          sudo apt-get install tidy -qq -y 1> /dev/null
+          find ./out -name "*.html" -exec sh -c 'echo "Processing {} ..."; tidy -config .tidy.conf -o {} {}' \;
+      - name: Preview deploy files
+        run: tree --du -shaC ./out
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
