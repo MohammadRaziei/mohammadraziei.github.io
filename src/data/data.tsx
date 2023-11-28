@@ -7,6 +7,7 @@ import {
   MapIcon,
   SparklesIcon,
 } from '@heroicons/react/24/outline';
+import {TypeAnimation} from 'react-type-animation';
 
 import GithubIcon from '../components/Icon/GithubIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
@@ -69,23 +70,40 @@ export const heroData: Hero = {
   name: `I'm Mohammad Raziei.`,
   description: (
     <>
+      <TypeAnimation
+        className="text-amber-600 prose-sm sm:prose-base "
+        repeat={Infinity}
+        sequence={[
+          "I'm a Reseacher",
+          2000,
+          "I'm a Data Scientist",
+          1000,
+          "I'm a Software Engineer",
+          1000,
+          "I'm a Senior Python developer",
+          1000,
+          "I'm a Senior C++ Developer",
+          1000,
+          'I Love Mathematics',
+          1500,
+          'I Love Mathematics and Physics',
+          1000,
+        ]}
+        speed={50}
+        style={{fontSize: '1.5em'}}
+      />
+
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm <strong className="text-stone-100">Mohammad Raziei</strong>, a graduate in Communication Systems and
-        Computer Engineering from <strong className="text-stone-100">Polytechnic of Tehran</strong> for my BSc, and
-        Biomedical Engineering from <strong className="text-stone-100">Sharif University</strong> for my MSc.
-      </p>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        My interests span <strong className="text-stone-100">Data Science</strong>,{' '}
+        I'm a researcher, passionate about <strong className="text-stone-100">Artificial Intelligence</strong>,{' '}
         <strong className="text-stone-100">Image Processing</strong>,{' '}
         <strong className="text-stone-100">Natural Language Processing</strong>, and{' '}
-        <strong className="text-stone-100">Signal Processing</strong> across various fields. I'm also proficient in{' '}
-        <strong className="text-stone-100">Backend Development</strong>, creating packages, implementing algorithms, and
-        working with <strong className="text-stone-100">Parallelism</strong> and{' '}
-        <strong className="text-stone-100">High-Performance Computing (HPC)</strong>.
+        <strong className="text-stone-100">Signal Processing</strong>. My expertise includes{' '}
+        <strong>Backend Development</strong>, creating packages, implementing algorithms, and working with{' '}
+        <strong className="text-stone-100">Parallelism</strong> and <strong>High-Performance Computing (HPC)</strong>.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        Alongside my professional pursuits, I indulge in hobbies such as solving Rubik's Cubes—be it the 3x3, 4x4, or
-        any other variation. Constant learning and skill enhancement are integral parts of my routine.
+        In my spare time, I immerse myself in solving Rubik's Cubes, enjoying the challenge of various sizes and
+        complexities. Continuous learning and skill enhancement remain integral aspects of my life.
       </p>
     </>
   ),
@@ -113,7 +131,7 @@ export const aboutData: About = {
   to use or feel most comfortable with, describing your personality, or whatever else you feel like throwing
   in.`,
   aboutItems: [
-    {label: 'Location', text: 'Victoria, BC', Icon: MapIcon},
+    {label: 'Location', text: 'Tehran, Iran', Icon: MapIcon},
     {label: 'Age', text: '29', Icon: CalendarIcon},
     {label: 'Nationality', text: 'Canadian / Irish', Icon: FlagIcon},
     {label: 'Interests', text: 'Motorcycles, Muay Thai, Banjos', Icon: SparklesIcon},
@@ -269,7 +287,7 @@ export const portfolioItems: PortfolioItem[] = [
 ];
 
 /**
- * Resume section -- TODO: Standardize resume contact format or offer MDX
+ * Resume section -- Standardize resume contact format or offer MDX
  */
 export const education: TimelineItem[] = [
   {

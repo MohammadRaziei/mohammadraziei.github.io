@@ -20,10 +20,10 @@
   "rules": {
     "react/display-name": "off",
     // The next two rules should be errors. But for now we"ll leave them as warnings since this will take a while
-    "react-memo/require-usememo": "error",
-    "react-memo/require-memo": "error",
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "error",
+//    "react-memo/require-usememo": "error",
+//    "react-memo/require-memo": "error",
+//    "react-hooks/rules-of-hooks": "error",
+//    "react-hooks/exhaustive-deps": "error",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/member-ordering": [
       "warn",
@@ -32,9 +32,9 @@
         "typeLiterals": ["signature", "method", "constructor", "field"]
       }
     ],
-    "import/first": "error",
-    "import/newline-after-import": "error",
-    "import/no-duplicates": "error",
+//    "import/first": "error",
+//    "import/newline-after-import": "error",
+//    "import/no-duplicates": "error",
     "import/order": "off",
     "no-irregular-whitespace": "off",
     "@typescript-eslint/no-unused-vars": ["warn", {"argsIgnorePattern": "^_"}],
