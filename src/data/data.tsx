@@ -5,7 +5,7 @@ import {
   CalendarIcon,
   FlagIcon,
   MapIcon,
-  SparklesIcon,
+  // SparklesIcon,
 } from '@heroicons/react/24/outline';
 import {TypeAnimation} from 'react-type-animation';
 
