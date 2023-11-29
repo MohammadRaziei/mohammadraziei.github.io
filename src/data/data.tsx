@@ -154,7 +154,7 @@ export const aboutData: About = {
     {label: 'Nationality', text: 'Persian', Icon: FlagIcon},
     // {label: 'Interests', text: 'Artificial Intelligence, Signal Processing', Icon: SparklesIcon},
     {label: 'Study', text: 'Sharif University of Tehran', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'Mobile Communication Company of Iran (MCI).', Icon: BuildingOffice2Icon},
+    {label: 'Employment', text: 'Hamrah Aval (MCI).', Icon: BuildingOffice2Icon},
   ],
 };
 
