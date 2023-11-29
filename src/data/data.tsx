@@ -125,18 +125,36 @@ export const heroData: Hero = {
 /**
  * About section
  */
+function calculateYears(dateOfBirth: string): number {
+  const today = new Date();
+  const birthDate = new Date(dateOfBirth);
+  return (
+    today.getFullYear() -
+    birthDate.getFullYear() -
+    (today.getMonth() - birthDate.getMonth() < 0 ||
+    (today.getMonth() - birthDate.getMonth() === 0 && today.getDate() < birthDate.getDate())
+      ? 1
+      : 0)
+  );
+}
+
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `Use this bio section as your way of describing yourself and saying what you do, what technologies you like
-  to use or feel most comfortable with, describing your personality, or whatever else you feel like throwing
-  in.`,
+  description: `I'm Mohammad Raziei, passionate about Data Science,
+   Image Processing, Natural Language Processing, and Signal Processing.
+    With studies in Communication Systems, Computer Engineering at Polytechnic
+   of Tehran, and Biomedical Engineering at Sharif University, I specialize
+    in Backend Development, algorithm implementation, Parallelism, and HPC.
+   Additionally, I have hands-on experience in MRI scanner image reconstruction. 
+   Outside of work, I continue to expand my expertise and interests through 
+   continuous learning.`,
   aboutItems: [
     {label: 'Location', text: 'Tehran, Iran', Icon: MapIcon},
-    {label: 'Age', text: '29', Icon: CalendarIcon},
-    {label: 'Nationality', text: 'Canadian / Irish', Icon: FlagIcon},
-    {label: 'Interests', text: 'Motorcycles, Muay Thai, Banjos', Icon: SparklesIcon},
-    {label: 'Study', text: 'University of Victoria', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'Instant Domains, inc.', Icon: BuildingOffice2Icon},
+    {label: 'Age', text: calculateYears('1997-03-04').toString(), Icon: CalendarIcon},
+    {label: 'Nationality', text: 'Persian', Icon: FlagIcon},
+    // {label: 'Interests', text: 'Artificial Intelligence, Signal Processing', Icon: SparklesIcon},
+    {label: 'Study', text: 'Sharif University of Tehran', Icon: AcademicCapIcon},
+    {label: 'Employment', text: 'Mobile Communication Company of Iran (MCI).', Icon: BuildingOffice2Icon},
   ],
 };
 
