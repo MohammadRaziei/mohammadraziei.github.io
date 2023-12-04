@@ -9,6 +9,7 @@ import {
 } from '@heroicons/react/24/outline';
 import {TypeAnimation} from 'react-type-animation';
 
+import BlogIcon from '../components/Icon/BlogIcon';
 import GithubIcon from '../components/Icon/GithubIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
 import heroImage from '../images/header-background.jpg';
@@ -154,7 +155,7 @@ export const aboutData: About = {
     {label: 'Nationality', text: 'Persian', Icon: FlagIcon},
     // {label: 'Interests', text: 'Artificial Intelligence, Signal Processing', Icon: SparklesIcon},
     {label: 'Study', text: 'Sharif University of Tehran', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'Hamrah Aval (MCI).', Icon: BuildingOffice2Icon},
+    {label: 'Employment', text: 'Hamrah-e-Avval (MCI).', Icon: BuildingOffice2Icon},
   ],
 };
 
@@ -409,6 +410,7 @@ export const socialLinks: Social[] = [
   {label: 'Github', Icon: GithubIcon, href: 'https://github.com/mohammadraziei'},
   // {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/8553186/tim-baker'},
   {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/mohammad-raziei-595515134/'},
+  {label: 'LinkedIn', Icon: BlogIcon, href: '/blog'},
   // {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/reactresume/'},
   // {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/TimBakerx'},
 ];
