@@ -12,6 +12,7 @@ import {TypeAnimation} from 'react-type-animation';
 import BlogIcon from '../components/Icon/BlogIcon';
 import GithubIcon from '../components/Icon/GithubIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
+import MediumIcon from '../components/Icon/MediumIcon';
 import heroImage from '../images/header-background.jpg';
 import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
 import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
@@ -72,22 +73,22 @@ export const heroData: Hero = {
   description: (
     <>
       <TypeAnimation
-        className="text-amber-600 prose-sm sm:prose-base "
+        className="text-indigo-400 prose-sm sm:prose-base overflow-hidden"
         repeat={Infinity}
         sequence={[
-          "I'm a Reseacher",
-          2000,
+          "I'm a Researcher",
+          4000,
           "I'm a Data Scientist",
-          1000,
+          2000,
           "I'm a Software Engineer",
-          1000,
-          "I'm a Senior Python developer",
-          1000,
-          "I'm a Senior C++ Developer",
-          1000,
+          3000,
+          "I'm Senior at Python",
+          2000,
+          "I'm Senior at C++",
+          2000,
           'I Love Mathematics',
-          1500,
-          'I Love Mathematics and Physics',
+          2000,
+          'I Love Physics',
           1000,
         ]}
         speed={50}
@@ -410,7 +411,8 @@ export const socialLinks: Social[] = [
   {label: 'Github', Icon: GithubIcon, href: 'https://github.com/mohammadraziei'},
   // {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/8553186/tim-baker'},
   {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/mohammad-raziei-595515134/'},
-  {label: 'LinkedIn', Icon: BlogIcon, href: '/blog'},
+  {label: 'Medium', Icon: MediumIcon, href: 'https://www.medium.com/@mohammad.raziei/'},
+  {label: 'Blog', Icon: BlogIcon, href: 'https://mohammadraziei.github.io/blog'},
   // {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/reactresume/'},
   // {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/TimBakerx'},
 ];
