@@ -356,12 +356,41 @@ export const education: TimelineItem[] = [
 export const experience: TimelineItem[] = [
   {
     date: 'March 2018 - Present',
-    location: 'Hamrah Avval Company',
+    location: 'Hamrah Avval Company (MCINEXT) - Tehran, Iran',
     title: 'Senior Python and C++ developer',
     content: (
       <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
+        The company's main goal is to achieve the digital dream and implement an internal search engine. Our team, named
+        document analysis, is responsible for analyzing pages, extracting features, analyzing site SEO, rendering
+        JavaScript pages, and estimating page quality.
+      </p>
+    ),
+  },
+  {
+    date: 'May 2018 -- Nov 2020',
+    location: 'SSIG Company - Tehran, Iran',
+    title: 'Member of Signal Processing & Software Department',
+    content: (
+      <p>
+        In this company, I interviewed for the software team but ended up working in the signal processing team. After a
+        month, I worked as a member of both teams. The software team consisted of 12 members, and the communication
+        signal processing team consisted of 8 members. Initially, in the signal processing team, we analyzed the
+        mentioned signals and implemented various algorithms in MATLAB. Then, as a MATLAB translator to C++, I
+        implemented these algorithms in the signal processing software, which was written in Qt.
+      </p>
+    ),
+  },
+  {
+    date: 'Jan 2021 -- Nov 2020',
+    location: 'Sunyar Company - Pardis, Iran',
+    title: 'Lead of AI and Software Engineering',
+    content: (
+      <p>
+        This company, located in Pardis Technology Park, works in the field of telecommunications and software. In this
+        team, I was the team lead of the programming group. The company's projects were in the telecommunications and
+        software domains, including projects in artificial intelligence, which involved five members. The projects
+        included tasks such as Automatic Modulation Recognition (AMR) and monitoring. Additionally, projects in
+        High-Performance Computing were carried out using CUDA for parallelization.
       </p>
     ),
   },
