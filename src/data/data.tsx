@@ -311,35 +311,53 @@ export const portfolioItems: PortfolioItem[] = [
  */
 export const education: TimelineItem[] = [
   {
-    date: 'April 2007',
-    location: 'Clown college',
-    title: 'Masters in Beer tasting',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
+    date: '2019 -- 2022',
+    location: 'Sharif University of Technology - Tehran, Iran',
+    title: 'M.Sc. in Biomedical Engineering - Electrical Engineering Department',
+    content: (
+      <>
+        <em>Thesis Title: Undersampled MRI Image Reconstruction</em>
+        <p>
+          This dissertation was successfully defended in early 2022 with a very good grade. Subsequently, it was
+          selected by the university as a confidential project for up to 5 years to complete the work related to the
+          article and its patent registration.
+        </p>
+      </>
+    ),
   },
   {
-    date: 'March 2003',
-    location: 'School of Business',
-    title: 'What did you study 101',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
+    date: '2017 -- 2020',
+    location: 'Amirkabir University of Technology - Tehran, Iran',
+    title: 'B.Sc. in Software Engineering - Computer Engineering Department',
+    content: (
+      <p>
+        Due to having excellent conditions resulting from my undergraduate GPA and ranking in the national university
+        entrance exam (461), I pursued further studies in the field of computer science in addition to electrical
+        engineering, through the University's Elite Talents Foundation.
+      </p>
+    ),
+  },
+  {
+    date: '2015 -- 2019',
+    location: 'Amirkabir University of Technology - Tehran, Iran',
+    title: 'B.Sc. in Communication Systems - Electrical Engineering Department',
+    content: (
+      <>
+        <em>Thesis Title: Reinforcement Learning based Algorithm to Control Autonomous vehicles</em>
+        <p>
+          This dissertation achieved the top rank in the industry at the end of 2019. This event was held with the
+          evaluation of a panel of electrical professors and industry judges.
+        </p>
+      </>
+    ),
   },
 ];
 
 export const experience: TimelineItem[] = [
   {
-    date: 'March 2010 - Present',
-    location: 'Awesome Development Company',
-    title: 'Senior UX Engineer',
-    content: (
-      <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
-      </p>
-    ),
-  },
-  {
-    date: 'March 2007 - February 2010',
-    location: 'Garage Startup Studio',
-    title: 'Junior bug fixer',
+    date: 'March 2018 - Present',
+    location: 'Hamrah Avval Company',
+    title: 'Senior Python and C++ developer',
     content: (
       <p>
         Describe work, special projects, notable achievements, what technologies you have been working with, and
@@ -388,8 +406,8 @@ export const contact: ContactSection = {
     },
     {
       type: ContactType.Location,
-      text: 'Victoria BC, Canada',
-      href: 'https://www.google.ca/maps/place/Victoria,+BC/@48.4262362,-123.376775,14z',
+      text: 'Tehran, Iran',
+      href: 'https://www.google.ca/maps/place/Tehran,+Tehran+Province,+Iran/@35.7077402,51.1828469,11z/',
     },
     // {
     //   type: ContactType.Instagram,
