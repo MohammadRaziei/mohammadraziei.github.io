@@ -1,7 +1,15 @@
 import React, {FC, memo, useEffect, useRef, useState} from 'react';
 
+const speakerColor = '#444';
+
 const UnmuteIcon: FC = props => (
-  <svg fill="#666" version="1.1" viewBox="0 0 246.8 246.8" width="32" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    fill={speakerColor}
+    version="1.1"
+    viewBox="0 0 246.8 246.8"
+    width="32"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}>
     <path
       d="M123.4,0C55.2,0,0,55.2,0,123.4s55.2,123.4,123.4,123.4h0c68.1,0,123.4-55.2,123.4-123.4S191.5,0,123.4,0z
 	 M58.6,157c0,0.2-0.2,0.4-0.4,0.4H35.5c-2.2,0-3.9-1.8-3.9-4.1v-60c0-2.3,1.8-4.1,3.9-4.1h22.7c0.2,0,0.4,0.2,0.4,0.4V157z
@@ -27,7 +35,13 @@ const UnmuteIcon: FC = props => (
 );
 
 const MuteIcon: FC = props => (
-  <svg fill="#666" version="1.1" viewBox="0 0 246.8 246.8" width="32" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    fill={speakerColor}
+    version="1.1"
+    viewBox="0 0 246.8 246.8"
+    width="32"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}>
     <path
       d="M123.4,0C55.2,0,0,55.2,0,123.4s55.2,123.4,123.4,123.4s123.4-55.2,123.4-123.4S191.6,0,123.4,0z
 	 M58.3,157.5l-23.8-0.1c-1.6,0-2.9-1.3-2.9-2.9c-0.1-21.3-0.1-41.9,0-61.6c0-0.7,0.1-1.4,0.3-2c0.3-1,1-1.4,2-1.5
@@ -53,34 +67,43 @@ const MuteIcon: FC = props => (
 
 const GithubUnwrap: FC = memo(() => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [muted, setMuted] = useState(false);
+  const [muted, setMuted] = useState(true);
+
+  const handleVideoClickBtn = () => {
+    const videoPlayer = videoRef.current;
+    if (videoPlayer) {
+      videoPlayer.muted = !videoPlayer.muted;
+      setMuted(videoPlayer.muted);
+    }
+  };
 
   useEffect(() => {
     let observer: IntersectionObserver;
 
-    if (videoRef.current) {
-      const options: IntersectionObserverInit = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.75,
-      };
-
-      const handleIntersection: IntersectionObserverCallback = entries => {
-        entries.forEach(entry => {
+    const handleIntersection: IntersectionObserverCallback = entries => {
+      entries.forEach(entry => {
+        if (videoRef.current) {
           if (entry.isIntersecting) {
-            const videoPlayer = videoRef.current;
-            if (videoPlayer && videoPlayer.paused) {
-              videoPlayer.play();
-            }
+            videoRef.current
+              .play()
+              .then(() => {})
+              .catch(error => {
+                console.error('Error playing video:', error);
+              });
           } else {
-            const videoPlayer = videoRef.current;
-            if (videoPlayer && !videoPlayer.paused) {
-              videoPlayer.pause();
-            }
+            videoRef.current.pause();
           }
-        });
-      };
+        }
+      });
+    };
 
+    const options: IntersectionObserverInit = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.75, // Adjust this threshold to your preference
+    };
+
+    if (videoRef.current) {
       observer = new IntersectionObserver(handleIntersection, options);
       observer.observe(videoRef.current);
     }
@@ -90,13 +113,22 @@ const GithubUnwrap: FC = memo(() => {
         observer.unobserve(videoRef.current);
       }
     };
-  }, []);
+  }, []); // Empty dependency array to run the effect only once
 
   const handleVideoClick = () => {
-    const videoPlayer = videoRef.current;
-    if (videoPlayer) {
-      videoPlayer.muted = !videoPlayer.muted;
-      setMuted(videoPlayer.muted);
+    if (videoRef.current) {
+      if (videoRef.current.paused) {
+        videoRef.current
+          .play()
+          .then(() => {
+            console.log('Hello Video');
+          })
+          .catch(error => {
+            console.error('Error playing video:', error);
+          });
+      } else {
+        handleVideoClickBtn();
+      }
     }
   };
 
@@ -106,13 +138,14 @@ const GithubUnwrap: FC = memo(() => {
         autoPlay
         className="absolute z-0 h-full w-full object-contain"
         loop
+        muted
         onClick={handleVideoClick}
         ref={videoRef}>
         <source src="/static/assets/downloaded/unwrapped-MohammadRaziei.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <div className="absolute top-2 right-2 text-gray-100 z-10">
-        <button onClick={handleVideoClick}>{muted ? <MuteIcon /> : <UnmuteIcon />}</button>
+      <div className="absolute bottom-2 left-2  z-10">
+        <button onClick={handleVideoClickBtn}>{muted ? <MuteIcon /> : <UnmuteIcon />}</button>
       </div>
     </div>
   );
