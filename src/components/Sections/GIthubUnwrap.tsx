@@ -140,11 +140,14 @@ const GithubUnwrap: FC = memo(() => {
         loop
         muted
         onClick={handleVideoClick}
+        onDoubleClick={() => {
+          window.location.href = 'https://github.com/mohammadraziei/';
+        }}
         ref={videoRef}>
         <source src="/static/assets/downloaded/unwrapped-MohammadRaziei.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <div className="absolute bottom-2 left-2  z-10">
+      <div className="absolute bottom-2 left-2 z-10">
         <button onClick={handleVideoClickBtn}>{muted ? <MuteIcon /> : <UnmuteIcon />}</button>
       </div>
     </div>
