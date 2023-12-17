@@ -3,13 +3,7 @@ import React, {FC, memo, useEffect, useRef, useState} from 'react';
 const speakerColor = '#444';
 
 const UnmuteIcon: FC = props => (
-  <svg
-    fill={speakerColor}
-    version="1.1"
-    viewBox="0 0 246.8 246.8"
-    width="32"
-    xmlns="http://www.w3.org/2000/svg"
-    {...props}>
+  <svg version="1.1" viewBox="0 0 246.8 246.8" width="32" xmlns="http://www.w3.org/2000/svg" {...props}>
     <path
       d="M123.4,0C55.2,0,0,55.2,0,123.4s55.2,123.4,123.4,123.4h0c68.1,0,123.4-55.2,123.4-123.4S191.5,0,123.4,0z
 	 M58.6,157c0,0.2-0.2,0.4-0.4,0.4H35.5c-2.2,0-3.9-1.8-3.9-4.1v-60c0-2.3,1.8-4.1,3.9-4.1h22.7c0.2,0,0.4,0.2,0.4,0.4V157z
@@ -35,13 +29,7 @@ const UnmuteIcon: FC = props => (
 );
 
 const MuteIcon: FC = props => (
-  <svg
-    fill={speakerColor}
-    version="1.1"
-    viewBox="0 0 246.8 246.8"
-    width="32"
-    xmlns="http://www.w3.org/2000/svg"
-    {...props}>
+  <svg version="1.1" viewBox="0 0 246.8 246.8" width="32" xmlns="http://www.w3.org/2000/svg" {...props}>
     <path
       d="M123.4,0C55.2,0,0,55.2,0,123.4s55.2,123.4,123.4,123.4s123.4-55.2,123.4-123.4S191.6,0,123.4,0z
 	 M58.3,157.5l-23.8-0.1c-1.6,0-2.9-1.3-2.9-2.9c-0.1-21.3-0.1-41.9,0-61.6c0-0.7,0.1-1.4,0.3-2c0.3-1,1-1.4,2-1.5
@@ -147,7 +135,7 @@ const GithubUnwrap: FC = memo(() => {
         <source src="/static/assets/downloaded/unwrapped-MohammadRaziei.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <div className="absolute bottom-2 left-2 z-10">
+      <div className="absolute bottom-2 left-2 z-10 fill-gray-500/70">
         <button onClick={handleVideoClickBtn}>{muted ? <MuteIcon /> : <UnmuteIcon />}</button>
       </div>
     </div>
