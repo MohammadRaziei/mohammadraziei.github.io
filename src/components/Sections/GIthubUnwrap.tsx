@@ -1,7 +1,5 @@
 import React, {FC, memo, useEffect, useRef, useState} from 'react';
 
-const speakerColor = '#444';
-
 const UnmuteIcon: FC = props => (
   <svg version="1.1" viewBox="0 0 246.8 246.8" width="32" xmlns="http://www.w3.org/2000/svg" {...props}>
     <path
