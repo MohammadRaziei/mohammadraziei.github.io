@@ -168,16 +168,12 @@ export const skills: SkillGroup[] = [
     name: 'Spoken languages',
     skills: [
       {
-        name: 'English',
+        name: 'Persian',
         level: 10,
       },
       {
-        name: 'French',
-        level: 4,
-      },
-      {
-        name: 'Spanish',
-        level: 3,
+        name: 'English',
+        level: 6,
       },
     ],
   },
@@ -185,50 +181,54 @@ export const skills: SkillGroup[] = [
     name: 'Frontend development',
     skills: [
       {
-        name: 'React',
-        level: 9,
+        name: 'HTML / CSS / Javascript / JQuery / bootstrap',
+        level: 6.7,
       },
       {
-        name: 'Typescript',
-        level: 7,
-      },
-      {
-        name: 'GraphQL',
-        level: 6,
+        name: 'React / NextJs / Typescript / TailwindCss',
+        level: 3,
       },
     ],
   },
   {
-    name: 'Backend development',
+    name: 'Programming Languages',
     skills: [
       {
-        name: 'Node.js',
+        name: 'Python / Cython / CPython',
+        level: 10,
+      },
+      {
+        name: 'C++ / Qt ',
+        level: 9,
+      },
+      {
+        name: 'Matlab',
         level: 8,
       },
       {
-        name: 'Rust',
-        level: 5,
-      },
-      {
-        name: 'Golang',
-        level: 4,
+        name: 'Cuda',
+        level: 7,
       },
     ],
   },
   {
-    name: 'Mobile development',
+    name: 'Artificial Intelligence',
     skills: [
       {
-        name: 'React Native',
+        name: 'Image Processing',
+        level: 5,
+      },
+      {
+        name: 'Signal Processing',
         level: 9,
       },
       {
-        name: 'Flutter',
-        level: 4,
+        name: 'Natural Language Processing (NLP)',
+        level: 6,
       },
       {
-        name: 'Swift',
-        level: 3,
+        name: 'Generative AI',
+        level: 6,
       },
     ],
   },
