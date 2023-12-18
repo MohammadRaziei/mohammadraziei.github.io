@@ -38,4 +38,6 @@ yarn-error.log*
 # vercel
 .vercel
 
+.fues_*
+
 public/static/assets/downloaded/
