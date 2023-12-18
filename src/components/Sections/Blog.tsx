@@ -22,13 +22,13 @@ const Blog: FC = memo(() => {
         <h1 className="text-4xl font-bold justify-center">Visit my weblog to know more about me </h1>
         <div className="flex justify-center mt-2">
           <Link
-            className="text-xl font-bold m-4 hover:text-gray-400"
+            className="text-xl font-bold m-4 hover:text-gray-500"
             href="https://mohammadraziei.github.io/blog/blog"
             target="_blank">
             Blog
           </Link>
           <Link
-            className="text-xl font-bold m-4 hover:text-gray-400"
+            className="text-xl font-bold m-4 hover:text-gray-500"
             href="https://mohammadraziei.github.io/blog/projects"
             target="_blank">
             Projects
