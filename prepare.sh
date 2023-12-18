@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Input file containing paths and URLs
-input_file="urls.txt"
+input_file="urls.conf"
 ## looks like below:
 ## urls.txt
 # 1x.png https://cdn.soft98.ir/Google%20Chrome.png
@@ -23,10 +23,16 @@ do
         continue
     fi
 
+    # Ignore the existed path
+    if [ -e "$path" ]; then
+        continue
+    fi
+
     # Create the directory if it doesn't exist
     mkdir -p "$(dirname "$path")"
 
     # Download the file to the specified path
+    echo -e "=====================\nDownloading into '$path'"
     wget -O "$path" "$url"
 
 done < "$input_file"
