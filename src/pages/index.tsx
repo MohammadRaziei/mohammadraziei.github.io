@@ -3,11 +3,12 @@ import {FC, memo} from 'react';
 
 import Page from '../components/Layout/Page';
 import About from '../components/Sections/About';
+import Blog from '../components/Sections/Blog';
 // import Contact from '../components/Sections/Contact';
 import Footer from '../components/Sections/Footer';
 import GIthubUnwrap from '../components/Sections/GIthubUnwrap';
 import Hero from '../components/Sections/Hero';
-// import Portfolio from '../components/Sections/Portfolio';
+import Portfolio from '../components/Sections/Portfolio';
 import Resume from '../components/Sections/Resume';
 // import Testimonials from '../components/Sections/Testimonials';
 import {homePageMeta} from '../data/data';
@@ -24,7 +25,8 @@ const Home: FC = memo(() => {
       <About />
       <Resume />
       <GIthubUnwrap />
-      {/* <Portfolio /> */}
+      <Portfolio />
+      <Blog />
       {/* <Testimonials /> */}
       {/* <Contact /> */}
       <Footer />

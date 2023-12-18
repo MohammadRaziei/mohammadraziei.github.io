@@ -56,6 +56,7 @@ export const SectionId = {
   About: 'about',
   Contact: 'contact',
   Portfolio: 'portfolio',
+  Blog: 'blog',
   Resume: 'resume',
   Skills: 'skills',
   Stats: 'stats',
@@ -316,7 +317,7 @@ export const education: TimelineItem[] = [
     title: 'M.Sc. in Biomedical Engineering - Electrical Engineering Department',
     content: (
       <>
-        <em>Thesis Title: Undersampled MRI Image Reconstruction</em>
+        <em style={{textAlign: 'left'}}>Thesis Title: Undersampled MRI Image Reconstruction</em>
         <p>
           This dissertation was successfully defended in early 2022 with a very good grade. Subsequently, it was
           selected by the university as a confidential project for up to 5 years to complete the work related to the
@@ -343,7 +344,9 @@ export const education: TimelineItem[] = [
     title: 'B.Sc. in Communication Systems - Electrical Engineering Department',
     content: (
       <>
-        <em>Thesis Title: Reinforcement Learning based Algorithm to Control Autonomous vehicles</em>
+        <em style={{textAlign: 'left'}}>
+          Thesis Title: Reinforcement Learning based Algorithm to Control Autonomous vehicles
+        </em>
         <p>
           This dissertation achieved the top rank in the industry at the end of 2019. This event was held with the
           evaluation of a panel of electrical professors and industry judges.

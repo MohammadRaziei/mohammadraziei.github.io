@@ -5,11 +5,13 @@ import {Skill as SkillType, SkillGroup as SkillGroupType} from '../../../data/da
 export const SkillGroup: FC<PropsWithChildren<{skillGroup: SkillGroupType}>> = memo(({skillGroup}) => {
   const {name, skills} = skillGroup;
   return (
-    <div className="flex flex-col">
-      <span className="text-center text-lg font-bold">{name}</span>
+    <div className="flex flex-col mb-8">
+      <span className="text-center text-lg font-bold mb-3">{name}</span>
       <div className="flex flex-col gap-y-2">
         {skills.map((skill, index) => (
-          <Skill key={`${skill.name}-${index}`} skill={skill} />
+          <div className="m-1">
+            <Skill key={`${skill.name}-${index}`} skill={skill} />
+          </div>
         ))}
       </div>
     </div>

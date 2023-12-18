@@ -10,8 +10,9 @@ declare module '*.webp' {
 }
 
 declare module '*.svg' {
-  const value: string;
-  export default value;
+  import {FC, SVGProps} from 'react';
+  const content: FC<SVGProps<SVGElement>>;
+  export default content;
 }
 
 declare module '*.png' {
