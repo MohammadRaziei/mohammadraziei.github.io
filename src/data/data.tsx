@@ -405,11 +405,11 @@ export const testimonial: TestimonialSection = {
       text: 'The greatest glory in living lies not in never falling, but in rising every time we fall.',
       image: '/static/assets/images/nelson-mandela.jpg',
     },
-    // {
-    //   name: 'Someone else',
-    //   text: 'Add several of these, and keep them as fresh as possible, but be sure to focus on quality testimonials with strong highlights of your skills/work ethic.',
-    //   image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/69.jpg',
-    // },
+    {
+      name: 'Dr Arash Amini',
+      text: 'If you focus most of your thoughts on small-minded people in your life, you will lower yourself to their level.',
+      image: '/static/assets/images/arash-amini.jpg',
+    },
   ],
 };
 
