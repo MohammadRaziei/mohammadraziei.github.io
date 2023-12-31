@@ -450,7 +450,7 @@ export const contact: ContactSection = {
 export const socialLinks: Social[] = [
   {label: 'Github', Icon: GithubIcon, href: 'https://github.com/mohammadraziei'},
   // {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/8553186/tim-baker'},
-  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/mohammad-raziei-595515134/'},
+  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/mohammadraziei/'},
   {label: 'Medium', Icon: MediumIcon, href: 'https://www.medium.com/@mohammad.raziei/'},
   {label: 'Blog', Icon: BlogIcon, href: 'https://mohammadraziei.github.io/blog'},
   // {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/reactresume/'},
