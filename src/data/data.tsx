@@ -102,7 +102,7 @@ export const heroData: Hero = {
   actions: [
     {
       // href: 'https://github.com/MohammadRaziei/resume/releases/latest/download/resume.pdf',
-      href: 'https://mohammadraziei.github.io/resume',
+      href: 'https://mohammadraziei.github.io/resume/resume.pdf',
       text: 'Resume',
       primary: true,
       Icon: ArrowDownTrayIcon,
