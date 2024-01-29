@@ -9,10 +9,10 @@ import Footer from '../components/Sections/Footer';
 import GIthubUnwrap from '../components/Sections/GIthubUnwrap';
 import Hero from '../components/Sections/Hero';
 import Portfolio from '../components/Sections/Portfolio';
+import Publications from '../components/Sections/Publications';
 import Resume from '../components/Sections/Resume';
 import Testimonials from '../components/Sections/Testimonials';
 import {homePageMeta} from '../data/data';
-import Publications from '../components/Sections/Publications';
 
 // eslint-disable-next-line react-memo/require-memo
 const Header = dynamic(() => import('../components/Sections/Header'), {ssr: false});

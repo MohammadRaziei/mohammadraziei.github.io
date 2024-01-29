@@ -21,12 +21,12 @@ const Publications: FC = memo(() => {
   ];
 
   return (
-    <Section sectionId={SectionId.Publications} className="bg-neutral-800">
+    <Section className="bg-neutral-800" sectionId={SectionId.Publications}>
       <div className="flex flex-col">
         <h2 className="self-center text-xl font-bold text-white">My Publications</h2>
         {publications.map(publication => (
           <div className="flex flex-col sm:flex-row shadow-lg rounded-lg p-6 mb-4">
-            <img src={publication.image} alt="Book Cover" className="w-48 h-auto sm:w-64 sm:mr-6 mb-4 sm:mb-0" />
+            <img alt="Book Cover" className="w-48 h-auto sm:w-64 sm:mr-6 mb-4 sm:mb-0" src={publication.image} />
             <div className="flex flex-col justify-center">
               <h2 className="text-xl text-gray-100 font-bold mb-2">{publication.title}</h2>
               <p className="text-gray-400">{publication.description}</p>
