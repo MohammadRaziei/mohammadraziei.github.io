@@ -29,7 +29,7 @@ const Publications: FC = memo(() => {
     {
       type: 'book',
       label: 'In Progress: 50%',
-      image: '/static/assets/images/publications/books/gspbook2.png',
+      image: '/static/assets/images/publications/books/GSPbook2.png',
       title: 'Graph Signal Processing book: Theory + Matlab simulations (GSPBOX)',
       date: '2024',
       description: (
