@@ -18,6 +18,10 @@ fi
 # Read the input file line by line
 while IFS=' ' read -r path url
 do
+    # Trim CR and LF characters from path and url variables
+    path=$(echo "$path" | tr -d '\r\n')
+    url=$(echo "$url" | tr -d '\r\n')
+
     # Skip empty lines or lines that start with #
     if [ -z "$path" ] || [[ "$path" == \#* ]]; then
         continue
@@ -33,6 +37,6 @@ do
 
     # Download the file to the specified path
     echo -e "=====================\nDownloading into '$path'"
-    wget -O "$path" "$url"
+    wget -O  "$path" "$url" -T 5
 
 done < "$input_file"

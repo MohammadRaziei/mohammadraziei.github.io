@@ -6,8 +6,11 @@ import Section from '../Layout/Section';
 const Publications: FC = memo(() => {
   const publications = [
     {
+      type: 'book',
+      label: 'Published',
       image: '/static/assets/images/publications/books/reinforcement-learning-book.jpg',
       title: 'Reinforcement Learning Applications In the Controlling of Autonomous Vehicles',
+      date: '2021',
       description: (
         <div>
           "Reinforcement Learning Applications in the Controlling of Autonomous Vehicles" is a comprehensive guide that
@@ -20,6 +23,53 @@ const Publications: FC = memo(() => {
             target="_blank">
             Read more.
           </a>
+        </div>
+      ),
+    },
+    {
+      type: 'book',
+      label: 'In Progress: 50%',
+      image: '/static/assets/images/publications/books/gspbook2.png',
+      title: 'Graph Signal Processing book: Theory + Matlab simulations (GSPBOX)',
+      date: '2024',
+      description: (
+        <div>
+          Explore the fundamentals of Graph Signal Processing in this groundbreaking Persian-language book co-authored
+          by <strong>Dr. Arash Amini</strong>. Delve into the mathematical intricacies of signal processing on graphs,
+          paving the way for a deeper understanding of this emerging field. A comprehensive guide for students and
+          researchers looking to grasp the core concepts of GSP in their native language.
+        </div>
+      ),
+    },
+    {
+      type: 'book',
+      label: 'In Progress: 95%',
+      image: '/static/assets/images/publications/books/matlab-python-simulink.png',
+      title: 'Connection between Matlab, Python and Simulink. Powered by Matlab-Engine',
+      date: '2024',
+      description: (
+        <div>
+          Establish seamless integration between MATLAB, Python, and Simulink through the powerful MATLAB Engine.
+          Leverage the versatility of Python for data manipulation and visualization, while harnessing MATLAB’s
+          computational capabilities. Bridge the gap between simulation and implementation by utilizing Simulink for
+          model-based design, creating a unified workflow across these platforms.
+        </div>
+      ),
+    },
+    {
+      type: 'article',
+      label: 'In Progress: 98%',
+      image: '/static/assets/images/publications/books/scanArticle.png',
+      title:
+        'Efficient Sequential Addressed Calculating Tree (ESACT): a Bank-Conflict-Free Technique for Parallel Prefix-Sum (Scan)',
+      date: '2024',
+      description: (
+        <div>
+          The paper introduces ESACT, a novel algorithm for parallel prefix sum calculations, addressing bank conflict
+          issues without shared memory padding. ESACT employs a “calculating tree” concept, transforming the Blelloch
+          algorithm into a sequential addressing scheme with pre-reordered indices. It achieves a remarkable 27%
+          increase in calculation speed, marking a significant advancement in parallel computing by overcoming previous
+          limitations.
         </div>
       ),
     },
@@ -38,8 +88,12 @@ const Publications: FC = memo(() => {
               </a>
             </div>
             <div className="flex flex-col justify-center">
-              <h2 className="text-xl text-gray-100 font-bold mb-2">{publication.title}</h2>
-              <p className="text-gray-400 text-justify">{publication.description}</p>
+              <div>
+                <span className="bg-neutral-700 text-neutral-400 rounded-xl px-3 py-1">{publication.label}</span>
+                <h2 className="text-xl text-gray-100 font-bold mb-2">{publication.title}</h2>
+              </div>
+              <span className="text-neutral-400">{publication.date}</span>
+              <div className="text-gray-400 text-justify">{publication.description}</div>
             </div>
           </div>
         ))}
