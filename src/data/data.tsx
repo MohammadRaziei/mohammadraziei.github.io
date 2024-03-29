@@ -147,7 +147,7 @@ export const aboutData: About = {
     {label: 'Age', text: calculateYears('1997-03-04').toString(), Icon: CalendarIcon},
     {label: 'Nationality', text: 'Persian', Icon: FlagIcon},
     // {label: 'Interests', text: 'Artificial Intelligence, Signal Processing', Icon: SparklesIcon},
-    {label: 'Study', text: 'Sharif University of Tehran', Icon: AcademicCapIcon},
+    {label: 'Study', text: 'Sharif University of Technology - Tehran', Icon: AcademicCapIcon},
     {label: 'Employment', text: 'Hamrah-e-Avval (MCI).', Icon: BuildingOffice2Icon},
   ],
 };
